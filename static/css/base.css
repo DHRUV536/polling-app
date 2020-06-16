@@ -1,0 +1,158 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+
+    font-family: serif;
+}
+
+.navbar_big {
+    display: flex;
+    justify-content: space-evenly;
+    box-shadow: 0px 0px 10px rgba(73, 255, 103, 0.575);
+}
+#small_navbar{
+    display: none;
+}
+
+
+.navbar_big .menu,
+.navbar_big .donate_big,
+.navbar_big .header
+ {
+    display: flex;
+    align-items: center;
+}
+
+.navbar_big .menu ul {
+    display: flex;
+    list-style: none;
+
+}
+
+.navbar_big .menu ul a {
+    padding: 10px 30px;
+    height: 100%;
+    font-size: 23px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+
+}
+
+.navbar_big .donate_big a {
+    padding: 12px 30px;
+    height: 100%;
+    font-size: 23px;
+    text-decoration: none;
+    color: rgb(50, 255, 50);
+    transition: 0.3s;
+}
+
+.navbar_big .header h1 {
+    font-size: 45px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.navbar_big .donate_big a:hover {
+    border-bottom: rgb(51, 255, 102) solid 1px;
+
+
+}
+
+.navbar_big .menu ul a:hover {
+    color: rgb(51, 255, 102);
+    border-bottom: rgb(51, 255, 102) solid 1px;
+
+}
+
+body {
+    background-color: black;
+    animation: fade 2s ease 1;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes temp {
+    0% {
+        letter-spacing: 10px;
+        color: aqua;
+        opacity: 0;
+    }
+
+    33% {
+        letter-spacing: 12px;
+        color: rgb(139, 255, 139);
+        opacity: 1;
+    }
+
+    100% {
+        letter-spacing: 10px;
+        color: aliceblue;
+        opacity: 0;
+
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #navbar_big{
+        display: none;
+    }
+    #small_navbar{
+        display: block;
+    }
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+    }
+    .toggle_button,.navbar .header h1{
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        font-size: 40px;
+        color: white;
+    }
+    .menu {
+       background-color: rgba(0, 0, 0, 0.767);
+        height: 100vh;
+        width: 100%;
+        position:fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 0;
+        overflow: hidden;
+        transition:  0.5s;
+    }
+    
+    .menu a{
+        font-size: 30px;
+        padding: 10px;
+        text-decoration: none;
+        list-style: none;
+        transition: .5s;
+        color: white;
+    }
+    .menu a:hover{
+        letter-spacing: 5px;
+    }
+    .menu .close_btn{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    
+}

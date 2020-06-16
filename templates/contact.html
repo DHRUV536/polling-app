@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     {% block css %}
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+
+    {% endblock css %} 
+
+
+    <title>{% block title %}
+        Contact Us
+        {% endblock title %} </title>
+
+</head>
+
+<body>
+    {% block content %}
+    {% for message in messages  %}
+    <p class="{{message.tags}}" id="{{message.tags}}">{{message}}</p>
+    
+    {% endfor %}
+    
+    <div class="header_contact_us">
+        <h1>Contact Us</h1>
+    </div>
+    <div class="form">
+        <form class='frm' action="/contact/" method='POST'>
+        {% csrf_token %}
+            <p>Full Name</p><input type="text" name="name" required>
+            <p>Email</p><input type="email" name="email" required>
+            <p> Contact no.</p> <input type="tel" name="number" required>
+            <p> Subject: </p><input type="text" name="subject" required>
+            <p> Your Issue:</p><textarea class="txt_area" name="issue" id="" cols="20" rows="5" required></textarea>
+            <p><input class='btn' type="Submit"></p>
+        </form>
+        <img class="cntusimg" src="{% static 'images/contact-us.jpg' %}" alt="" height=500px>
+    </div>
+    <script>
+        function message(){
+
+            document.getElementById('success').style.opacity=0;
+        }
+        setTimeout(message,5000);
+    </script>
+    {% endblock content %}
+</body>
+
+</html>

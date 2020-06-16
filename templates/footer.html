@@ -1,0 +1,26 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <title>footer</title>
+</head>
+
+<body>
+    {% block content %}
+
+    {% endblock content %}
+    <div class="footer">
+        <h1>Follow us?</h1>
+        <div class="images">
+            <a target="_blank" href="https://www.facebook.com/dhruvnivatia"><img src="{% static 'images/facebook (1).png' %}" alt=""></a>
+            <a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=dhruvn536@gmail.com&body=Hey Dhruv,"><img src="{% static 'images/gmail.png' %}" alt=""></a>
+            <a target="_blank" href="https://www.instagram.com/codedhruv.ai/"><img src="{% static 'images/instagram.png' %}" alt=""></a>
+        </div>
+    </div>
+</body>
+
+</html>

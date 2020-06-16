@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    {% endblock css %}
+    <title>
+        {% block title %}
+        About Me</title>
+        {% endblock title %}
+</head>
+
+<body>
+    {% block content %}
+    
+    
+    <div class="container">
+        <div class="content">
+            <h1>About</h1>
+            <p>I am Dhruv from India created this example website using django a python framework.This is a Simple
+                Polling
+
+                website
+                where you can create poll and answers on other poll.
+                I am
+                not
+                advertising django but guys its really cool.
+                Django has some cool built in features like its authentication, a cool Dashboard.
+                I have started django 15-20 days ago and now i love it.Now i am planning to dive more in this field.
+                before this , I was Machine Learning Learner. I started Django because in Machine learning you just can
+                build model and run in terminal but in case if you want to show your ML work to others, obviously you
+                dont
+                want to share python file and ask them to install python.
+                so due to those reasons i started website development as i can build ML web app.
+                Guys i hope you will like my work. If you want to donate something, You can click on donate button, I
+                will
+                be thankful to you.
+            </p>
+        </div>
+
+    </div>
+    <form class="frm" action="/donate"><Button>DONATE</Button></form>
+    
+    {% endblock content %}
+</body>
+
+</html>

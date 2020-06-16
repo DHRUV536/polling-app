@@ -1,0 +1,118 @@
+* {
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+
+
+
+}
+
+button {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px 30px;
+    font-size: 20px;
+    letter-spacing: 8px;
+    background-color: rgb(92, 255, 92);
+    cursor: pointer;
+    width: 300px;
+    transition: .4s;
+    border: none;
+
+}
+
+button:hover {
+    letter-spacing: 15px;
+}
+
+.frm {
+
+    left: 64.1%;
+    padding: 20px 0px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.content {
+    width: 60%;
+    font-size: 20px;
+    padding: 10px;
+    letter-spacing: 1px;
+    background-color: black;
+    color: white;
+    box-shadow: 0px 0px 10px rgb(57, 255, 39);
+}
+
+.content h1 {
+    letter-spacing: 5px;
+    padding: 20px;
+}
+
+.content p {
+    padding: 20px;
+    line-height: 35px;
+}
+
+body {
+    background-color: black;
+    animation: fade 2s ease 1;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .content {
+        width: 100%;
+        font-size: 17px;
+
+    }
+
+    .frm {
+        padding: 20px;
+        display: flex;
+
+
+
+
+    }
+    .content p {
+        padding: 20px;
+        line-height: 30px;
+    }
+    
+
+    button {
+        font-family: 'Courier New', Courier, monospace;
+        padding: 10px 17px;
+        font-size: 15px;
+        letter-spacing: 5px;
+        background-color: rgb(92, 255, 92);
+        cursor: pointer;
+        width: 150px;
+        transition: .4s;
+        border: none;
+
+    }
+
+    button:hover {
+        letter-spacing: 7px;
+    }
+
+}

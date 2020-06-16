@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    {% endblock css %}
+
+    <title>{% block title %}
+        Home
+        {% endblock title %}</title>
+</head>
+
+<body id="body">
+    {% block content %}
+    {% for message in messages  %}
+    <p class={{message.tags}} id="{{message.tags}}">{{message}}</p>
+    {% endfor %}
+    <img class="background" src="{% static 'images/feedback-3240007_1920.jpg' %}" alt="">
+
+    <div class="heading">
+        <img src="{% static 'images/logo.png' %}" alt="">
+        <h1 class="line" style="margin: 20px;">Django Polling App</h1>
+        {% if request.user.is_authenticated %}
+        <p class="animated_text"> <a href="/dashboard">Welcome {{request.user.username}}</a></p>
+        <p class="animated_text"> <a href="/dashboard" style="font-size:25px">Your Dashboard is wating ,click here..</a></p>
+        {% else %}
+        <p class="animated_text"> <a href="/registrations">Register and start creating your poll</a></p>
+        {% endif %}
+        
+
+    </div>
+    {% include "footer.html" %}
+    <script>
+        function message() {
+
+            document.getElementById('success').style.opacity = 0;
+        }
+        setTimeout(message, 5000);
+    </script>
+
+    {% endblock content %}
+
+
+
+
+
+
+</body>
+
+</html>

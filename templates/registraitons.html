@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'css/another_form.css' %}">
+    {% endblock css %}
+    
+    <title>
+    {% block title %}
+    Register
+    {% endblock title %}
+    </title>
+</head>
+
+<body>
+{% block content %}
+    {% for message in messages %}
+    <p class="{{message.tags}}">{{message}}</p>
+    {% endfor %}
+    
+    <img src="{% static 'images/sign_in.png' %}" height="100%" width="100%" class="background" alt="">
+    <div class="container">
+        <div class="form-container signup-container">
+            <form action="/registrations/" class="log_in_form" method='POST'>
+                {% csrf_token %}
+                <h1 style="color: rgb(55, 255, 55);">Create Account</h1>
+                
+                <input type="text" name="name" placeholder="full name" required>
+                <input type="text" name="username" placeholder="username" required>
+                <input type="email" name="email" placeholder="email" required>
+                <input type="password" name="password" placeholder="password" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+        <div class="form-container signin-container">
+            <form action="/handlelogin/" class="log_in_form" method='POST'>
+                {% csrf_token %}
+                <h1 style="color: rgb(55, 255, 55);">Log in</h1>
+                
+                <input type="text" name="username" placeholder="username">
+                <input type="password" name="password" placeholder="password">
+                <button type="submit">Log in</button>
+                <a href="#">forgot password?</a>
+            </form>
+        </div>
+    </div>
+
+    <div class="overlay">
+        <div class="overlay-container" id="overlay_container">
+            <h1 id="h1_left" class="h1_left">Welcome Back</h1>
+            <p id="p_left" class="p_left">To keep connected with us, please log in </p>
+            <a  id="btn_left" onclick="showsignup()"  id="signin">New Here?</a>
+            <!-- right side -->
+            <h1 class="right" id="h1_right">Hello, Friend</h1>
+            <p class="right" id="p_right">Enter your details and start journey with us</p>
+            <a class="right" id="btn_right" onclick="showlogin()"  id="signin">Sign in?</a>
+        </div>
+        
+    </div>
+    <div class="container_mobile">
+        <div class="buttons">
+
+
+            <button class='log_btn' onclick="sign_in()" id="login">Log In</button>
+            <button style="color: white;" class='log_btn' onclick="sign_up()" id="signup">Sign Up</button>
+        </div>
+        <div class="box">
+            <div class="main" id="main">
+
+                <div class="login" id="login"></div>
+                <form action="/handlelogin/" class="log_in_form" method='POST'>
+                {% csrf_token %}
+                    <input class="form_input" type="text" required name="username" placeholder="username">
+                    <input class="form_input" type="password" required name="password" placeholder="password">
+                    <input type="submit" class="loginbtn" value="Log in">
+                </form>
+                
+            </div>
+            <div class="log_in_form" id="main_signup">
+                <form action="/registrations/" class="log_in_form" method='POST'>
+                {% csrf_token %}
+                    <input class="form_input" type="text" required name="fullname" placeholder="fullname">
+                    <input class="form_input" type="text" required name="username" placeholder="username">
+                    <input class="form_input" type="text" required name="email" placeholder="email">
+                    <input class="form_input" type="password" required name="pass" placeholder="password">
+                    <input type="submit" class="loginbtn" value="Signup">
+                </form>
+            </div>
+        </div>
+    </div>
+   
+    <script>
+        function sign_in() {
+            document.getElementById('main_signup').style.width = '0px'
+            document.getElementById('main').style.width = '500px'
+            document.getElementById('login').style.color = 'black'
+            document.getElementById('login').style.backgroundColor = 'rgb(0, 255, 0)'
+            document.getElementById('signup').style.backgroundColor = 'transparent'
+            document.getElementById('signup').style.color = 'white'
+
+
+        }
+        function sign_up() {
+            document.getElementById('main_signup').style.width = '500px'
+            document.getElementById('main').style.width = '0px'
+            document.getElementById('login').style.color = 'white'
+            document.getElementById('login').style.backgroundColor = 'transparent'
+            document.getElementById('signup').style.backgroundColor = 'rgb(0, 255, 0)'
+            document.getElementById('signup').style.color = 'black'
+
+
+        }
+        function showsignup(){
+            document.getElementById('overlay_container').style.left='50%';
+            document.getElementById('h1_right').style.display="block";
+            document.getElementById('p_right').style.display="block";
+            document.getElementById('btn_right').style.display="block";
+            
+            document.getElementById('h1_left').style.display="none";
+            document.getElementById('p_left').style.display="none";
+            document.getElementById('btn_left').style.display="none";
+        }
+        function showlogin(){
+            document.getElementById('overlay_container').style.left='15%';
+            document.getElementById('h1_right').style.display="none";
+            document.getElementById('p_right').style.display="none";
+            document.getElementById('btn_right').style.display="none";
+            
+            document.getElementById('h1_left').style.display="block";
+            document.getElementById('p_left').style.display="block";
+            document.getElementById('btn_left').style.display="block";
+        }
+    </script>
+{% endblock content %}
+</body>
+
+</html>

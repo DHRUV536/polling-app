@@ -1,0 +1,303 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>codedhruv.ai</title>
+
+</head>
+<style>
+    * {
+        transition: all 0.2s;
+        margin: 0;
+        padding: 0;
+        font-family: serif;
+
+    }
+
+
+
+    body {
+        background: url('/static/images/votin_edit.png');
+        background-size: cover;
+        color: white;
+    }
+
+    .header {
+        color: rgb(19, 199, 34);
+        text-align: center;
+        margin: 100px 0px 30px;
+        font-size: 50px;
+        font-weight: 100;
+        letter-spacing: 5px;
+    }
+
+    .redirect {
+        text-align: center;
+        margin: 20px 0px 60px;
+    }
+
+    .redirect a {
+        letter-spacing: 5px;
+        text-decoration: none;
+        animation: redirect 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+        font-size: 25px;
+
+    }
+
+    @keyframes redirect {
+        0% {
+            letter-spacing: 5px;
+            color: white;
+
+        }
+
+        50% {
+            letter-spacing: 10px;
+            color: rgb(196, 255, 196);
+        }
+
+        100% {
+            letter-spacing: 5px;
+            color: white;
+        }
+    }
+
+    .question {
+
+        width: 80%;
+        margin: 0px auto;
+        color: white;
+        letter-spacing: 1px;
+        font-weight: 300;
+
+    }
+
+    .description {
+
+        width: 75%;
+        margin: 10px auto;
+        font-size: 18px;
+        letter-spacing: 2px;
+        font-weight: 100;
+        color: rgb(255, 255, 255);
+
+    }
+
+    form {
+        width: 70%;
+        padding: 10px;
+        margin: 10px auto;
+
+
+    }
+
+    .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+    }
+
+
+
+    .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: white;
+        border-radius: 2px;
+
+    }
+
+
+    .container:hover input~.checkmark {
+        background-color: #ccc;
+    }
+
+    .container input:checked~.checkmark {
+        background-color: #2196F3;
+    }
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    .container input:checked~.checkmark:after {
+        display: block;
+    }
+
+    .container .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    .radio {
+        border-radius: 50%;
+
+    }
+
+    .container .radio:after {
+        top: 8px;
+        left: 8px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: white;
+    }
+
+    .btn {
+        padding: 5px;
+        letter-spacing: 2px;
+        cursor: pointer;
+        width: 100px;
+        background-color: #47ff56;
+        border: none;
+        color: rgb(0, 0, 0);
+        font-size:15px;
+    }
+
+    .btn:hover {
+        letter-spacing: 4px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .header {
+
+            margin: 100px 0px 30px;
+            font-size: 30px;
+
+        }
+
+        .redirect a {
+            letter-spacing: 3px;
+            text-decoration: none;
+            animation: redirect 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+            font-size: 15px;
+
+        }
+
+        @keyframes redirect {
+            0% {
+                letter-spacing: 3px;
+                color: white;
+
+            }
+
+            50% {
+                letter-spacing: 6px;
+                color: rgb(196, 255, 196);
+            }
+
+            100% {
+                letter-spacing: 3px;
+                color: white;
+            }
+        }
+
+        .question {
+            font-size: 19px;
+            width: 95%;
+        }
+
+        .description {
+
+            width: 85%;
+
+            font-size: 14px;
+
+
+        }
+
+        form {
+            width: 85%;
+        }
+
+        .container {
+            font-size: 14px;
+            padding-left: 20px;
+        }
+
+        .checkmark {
+            height: 15px;
+            width: 15px;
+        }
+
+        .container .checkmark:after {
+            left: 5px;
+            top: 4px;
+            width: 5px;
+            height: 4px;
+            border-width: 0 2px 2px 0;
+
+        }
+
+        .container .radio:after {
+            top: 4.6px;
+            left: 4.5px;
+            width: 4px;
+            height: 4px;
+        }
+
+    }
+</style>
+
+<body>
+
+    <h1 class="header">codedhruv.ai</h1>
+    <p class="redirect"><a href="/">Create Your Own Poll</a></p>
+    {% if poll %}
+    
+    
+    
+    <h1 class="question">{{poll.title|title}}</h1>
+    <p class="description">{{poll.description|title}}</p>
+    <div class="options">
+
+
+
+        <form action="/votecount/{{poll.id}}">
+            {% for option in options %}
+            <label class="container">{{option|title}}
+                <input type="radio" name="option" value="{{option}}">
+                <span class="checkmark"></span>
+
+            </label>
+            {% endfor %}
+            <input type="submit" class="btn">
+        </form>
+
+    </div>
+    {% else %}
+    <h1 style="text-align:center;margin:100px 0px">Thank You for Your vote, Keep Voting</h1>
+    {% endif %}
+</body>
+
+</html>

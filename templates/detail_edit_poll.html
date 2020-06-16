@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block css %}
+
+    <link rel="stylesheet" href="{% static 'css/detail_edit_poll.css' %}">
+    {% endblock css %}
+    <title>
+        question title | codepoll.ai</title>
+</head>
+
+<body>
+    {% block content %}
+
+
+    {% for message in messages  %}
+    <p class="{{message.tags}}" id="{{message.tags}}">{{message}}</p>
+
+    {% endfor %}
+    <img class="background" src="{% static 'images/background1.jpg' %}" alt="">
+    {% if poll %}
+    <form action="/save_exist/{{poll.id}}" class="edit_form">
+        <input class="question" name="question" type="text" required placeholder="Write Question here...."
+            value="{{poll.title|title}}">
+        <input class="description" name="decription" placeholder="description...(optional)" value="{{poll.decription}}">
+        <input type="text" name="option1" placeholder="option 1" required value="{{poll.option1}}" d>
+        <input type="text" name="option2" placeholder="option 2" required value="{{poll.option2}}">
+        <input type="text" name="option3" placeholder="option 3(optional)" value="{{poll.option3}}">
+        <input type="text" name="option4" placeholder="option 4(optional)" value="{{poll.option4}}">
+        <input type="text" name="option5" placeholder="option 5(optional)" value="{{poll.option5}}">
+        <input type="text" name="option6" placeholder="option 6(optional)" value="{{poll.option6}}">
+        <input type="text" name="option7" placeholder="option 7(optional)" value="{{poll.option7}}">
+        <input type="text" name="option8" placeholder="option 8(optional)" value="{{poll.option8}}">
+        <button class="save_btn" type="submit" href="">Save</button>
+    </form>
+    {% else %}
+     <form action="/save" class="edit_form">
+        <input class="question" name="question" type="text" required placeholder="Write Question here...."
+            value="{{poll.title|title}}">
+        <input class="description" name="decription" placeholder="description...(optional)" value="">
+        <input type="text" name="option1" placeholder="option 1" required value="">
+        <input type="text" name="option2" placeholder="option 2" required value="">
+        <input type="text" name="option3" placeholder="option 3(optional)" value="">
+        <input type="text" name="option4" placeholder="option 4(optional)" value="">
+        <input type="text" name="option5" placeholder="option 5(optional)" value="">
+        <input type="text" name="option6" placeholder="option 6(optional)" value="">
+        <input type="text" name="option7" placeholder="option 7(optional)" value="">
+        <input type="text" name="option8" placeholder="option 8(optional)" value="">
+        <button class="save_btn" type="submit" href="">Save</button>
+    </form>
+    {% endif %}
+
+    <div class="results">
+        <h1>Results</h1>
+        <div class="option_line">
+            <h2>{{poll.option1}}</h2>
+            <h2>{{poll.option1_count}}</h2>
+        </div>
+        <div class="option_line">
+            <h2>{{poll.option2}}</h2>
+            <h2>{{poll.option2_count}}</h2>
+        </div>
+        <div class="option_line">
+            <h2>{{poll.option3}}</h2>
+            <h2>{{poll.option3_count}}</h2>
+        </div>
+        <div class="option_line">
+            <h2>{{poll.option4}}</h2>
+            <h2>{{poll.option4_count}}</h2>
+        </div>
+        <div class="option_line">
+            <h2>{{poll.option5}}</h2>
+            <h2>{{poll.option5_count}}</h2>
+        </div>
+        <div class="option_line">
+            <h2>{{poll.option6}}</h2>
+            <h2>{{poll.option6_count}}</h2>
+        </div>
+        <div class="option_line">
+            <h2>{{poll.option7}}</h2>
+            <h2>{{poll.option7_count}}</h2>
+        </div>
+        <div class="option_line">
+            <h2>{{poll.option8}}</h2>
+            <h2>{{poll.option8_count}}</h2>
+        </div>
+
+    </div>
+
+    {% endblock content %}
+</body>
+
+</html>

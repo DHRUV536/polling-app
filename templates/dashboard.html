@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    {% endblock css %}
+
+    <title>
+        {% block title %}
+        My Dashboard
+        {% endblock title %}
+        Dashboard
+    </title>
+</head>
+
+<body>
+    {% block content %}
+    {% for message in messages  %}
+    <p class="{{message.tags}}" id="{{message.tags}}">{{message}}</p>
+
+    {% endfor %}
+
+    <img class="background" src="{% static 'images/vote-1804596_1920.jpg' %}" alt="">
+    <div class="header_dashboard">
+        <h1>Your Polls</h1>
+        <h4>logged in as <span>{{request.user.username}}</span></h4>
+    </div>
+    <div class="search_bar">
+
+        <form class="search_box" action='/search'>
+            <input type="search" placeholder="search here..." name='query'>
+            <button type="submit" href="" class="fa fa-search" aria-hidden="true" style="background: transparent;border:none;"></button>
+        </form>
+        <div class="create">
+            <a href="/create">Create &#x2b</a>
+
+        </div>
+
+    </div>
+    {% if polls %}
+    {% for poll in polls  %}
+    <a style="color:white;text-decoration:none" href="/detail/{{poll.id}}">
+        <div class="mypoll">
+            <h2>{{poll.title}}</h2>
+            <p>Created at {{poll.create_time}}</p>
+            <div class="buttons">
+                <a href="/share/{{poll.id}}"> <button style="color: rgb(71, 255, 71);">Share</button></a>
+                <a href="/detail/{{poll.id}}"> <button style="color: rgb(168, 255, 168);">Edit</button></a>
+                <a href="/delete/{{poll.id}}"> <button style="color: rgb(255, 74, 74);">Delete</button></a>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+    {% else %}
+    <h1 style="opacity:0.4;color:white;font-size:3vw;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)">No Post Here &#128533, Create One &#128513</h1>
+    {% endif %}
+
+    <script>
+        function message() {
+
+            document.getElementById('success').style.opacity = 0;
+        }
+        setTimeout(message, 5000);
+    </script>
+    \
+    {% endblock content %}
+
+</body>
+
+</html>

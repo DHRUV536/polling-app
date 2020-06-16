@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+.header_contact_us h1 {
+    margin-top: 10px;
+    font-size: 30px;
+
+
+    padding: 10px 25px;
+    letter-spacing: 3px;
+    color: white;
+}
+.success{
+    background-color: rgb(143, 255, 143);
+    color: black;
+    font-size: 17px;
+    padding: 10px;
+}
+.form {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+
+.frm {
+    font-size: 20px;
+    letter-spacing: 2px;
+    display: flex;
+    flex-flow: column;
+    margin: 20px;
+    width: 60%;
+
+
+}
+
+.frm p {
+    padding: 10px 0px;
+}
+
+.frm input {
+    font-size: 20px;
+    padding: 2px 10px;
+    border: none;
+    border-bottom: white solid 1px;
+    background: transparent;
+    color: white;
+    letter-spacing: 3px;
+    font-family: serif;
+}
+
+.frm input:focus {
+    outline: none;
+}
+
+.frm .btn {
+    padding: 10px;
+    width: 100%;
+    background-color: rgba(64, 255, 80, 0.527);
+    color: white;
+    letter-spacing: 10px;
+    cursor: pointer;
+    border: none;
+    transition: .5s;
+}
+
+.frm .btn:hover {
+    letter-spacing: 30px;
+}
+
+.frm .txt_area {
+    padding: 10px;
+    font-size: 20px;
+    border: white solid 1px;
+    background: transparent;
+    color: white;
+}
+
+body {
+    color: white;
+    background-color: black;
+    animation: fade 1s ease 1;
+    font-family: serif;
+    overflow-x: hidden;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .cntusimg {
+        display: none;
+    }
+
+    .header_contact_us h1{
+        margin-top: 70px;
+
+
+
+        padding: 5px 25px;
+
+
+    }
+
+    .form {
+
+        
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .frm {
+        font-size: 16px;
+
+        margin: 20px;
+        width: 100%;
+
+
+    }
+
+    .frm p {
+        padding: 15px 0px 0px 0px;
+    }
+
+    .frm .btn {
+        padding: 10px;
+        width: 100%;
+
+        letter-spacing: 5px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+}

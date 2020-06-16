@@ -1,0 +1,308 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    /* border: solid 1px red; */
+}
+.error{
+    background-color: rgb(255, 80, 80);
+    color: black;
+    font-size: 17px;
+    padding: 10px;
+}
+.success{
+    background-color: rgb(139, 255, 85);
+    color: black;
+    font-size: 17px;
+    padding: 10px;
+}
+.container_mobile{
+    display: none;
+}
+.container{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    height: 70vh;
+    width: 70vw;
+    display:flex ;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 2px green;
+    flex-wrap: wrap;
+    transition: 0.6s;
+    
+}
+.signup-container,.signin-container{
+    flex: 50%;
+    transition: 0.6s;
+}
+.form-container form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    letter-spacing: 3px;
+    font-size:18px;
+    transition: 0.6s;
+}
+.form-container form h1,.form-container form p,.form-container form a{
+    padding: 10px;
+    color: white;
+    transition: 0.6s;
+}
+.form-container form input{
+    width: 70%;
+    height: 50px;
+    font-size: 20px;
+    padding: 0px 12px;
+    margin: 20px 5px;
+    color: white;
+    border: none;
+    border-bottom:rgb(58, 233, 58) solid 1px ;
+    outline: none;
+    background: transparent;
+    transition: 0.6s;
+}
+.form-container form input::placeholder{
+    color: rgb(255, 255, 255);
+    opacity: 0.6;
+    transition: 0.6s;
+}
+.form-container form h1{
+    text-align: center;
+    transition: 0.6s;
+}
+.form-container form p{
+    text-align: center;
+    transition: 0.6s;
+}
+
+.form-container form button{
+    width: 70%;
+    height: 40px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    background-color: rgb(66, 224, 66);;
+    border: none;
+    transition: .4s;
+    cursor: pointer;
+
+}
+.form-container form button:hover{
+    letter-spacing: 10px;
+    transition: 0.6s;
+}
+body{
+    background-color: black;
+    animation: fade 2s ease 1 ;
+}
+
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+
+.overlay .overlay-container{
+    position: absolute;
+    top:15%;
+    left: 15%;
+    width: 35%;
+    height: 70%;
+    vertical-align: middle;
+   
+    background: url('/static/images/sign_in_light.jpg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: cubic-bezier(0.6, -0.28, 0.735, 0.045) .7s;
+    color: white;
+    box-shadow: 0px 0px 10px green;
+    background-position: center;
+    background-size: cover;   
+}
+.overlay .overlay-container h1{
+    padding: 20px;
+    letter-spacing: 10px;
+    font-size: 40px;
+    transition: 0.6s ease-in-out;
+    color: rgb(55, 255, 55);
+}
+.overlay .overlay-container p{
+    font-size: 20px;
+    letter-spacing: 5px;
+    padding: 10px;
+    transition:  0.6s linear;
+}
+.overlay .overlay-container a{
+    margin: 30px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition:  0.6s linear;
+    animation: link 1s linear infinite ;
+    height: 60px;
+    width: 200px;
+    letter-spacing: 5px;
+    text-align: center;
+}
+* {
+    margin: 0px;
+    padding: 0px;
+    
+   
+
+}
+.container_mobile{
+    margin-top: 100px;
+    transition: 0.6s;
+   
+}
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.6s;
+
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.6s;
+}
+.main{
+    
+    width: 500px;
+    overflow: hidden;
+    transition: 0.6s;
+}
+
+.log_btn {
+    width: 200px;
+    font-size: 10px;
+    padding: 15px 40px;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+    background: none;
+    transition: 0.6s;
+
+}
+
+#login {
+    background-color: rgb(60, 255, 102);
+    color: rgb(0, 0, 0);
+    transition: 0.6s;
+}
+
+.log_in_form {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    transition: 0.6s;
+}
+
+
+.form_input {
+    
+    margin: 20px;
+    padding: 10px;
+    font-size: 20px;
+    width: 80%;
+    border: none;
+    border-bottom: rgb(73, 255, 73) solid 1px;
+    outline: none;
+    background: transparent;
+    transition: 0.6s;
+
+}
+
+.loginbtn {
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(122, 255, 70);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    margin: 20px;
+    padding: 10px;
+    font-size: 20px;
+    width: 80%;
+    outline: none;
+    transition: 0.6s;
+
+}
+.loginbtn:hover{
+    letter-spacing: 5px;
+    transition: 0.6s;
+}
+#main_signup{
+   
+    width: 0;
+    overflow: hidden;
+    transition: 0.6s;
+    
+}
+
+@keyframes link{
+    0%{
+        letter-spacing: 5px;
+        color: rgb(0, 255, 0);
+        
+    }
+    50%{
+        letter-spacing: 10px;
+        color: rgb(55, 255, 55);
+        
+        
+    }
+    100%{
+        letter-spacing: 5px;
+        color: rgb(0, 255, 0);
+        
+    }
+
+}
+.right{
+    display: none;
+    transition:0.6s linear;
+}
+.background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0.15;
+    z-index: -789;
+}
+@media only screen and (max-width: 600px){
+    .overlay{
+        display: none;
+    }
+    .log_btn {
+        
+        padding: 10px 15px;
+        width: 130px;
+    
+    }
+    .container{
+        display: none;
+    }
+    .container_mobile{
+        display: block;
+    }
+}

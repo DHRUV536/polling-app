@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.success {
+    background-color: rgb(100, 255, 95);
+    color: black;
+    font-size: 17px;
+    padding: 10px;
+}
+.error {
+    background-color: rgb(255, 97, 97);
+    color: black;
+    font-size: 17px;
+    padding: 10px;
+}
+
+.edit_form {
+    width: 50%;
+    margin: 100px auto;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.edit_form input {
+    width: 40%;
+    padding: 10px;
+    font-size: 25px;
+    margin: 10px;
+    color: white;
+    border: none;
+    border-bottom: rgb(53, 255, 53) 1px solid;
+    outline: none;
+    background: transparent;
+    letter-spacing: 6px;
+    text-align: center;
+
+}
+
+.edit_form .question {
+    width: 90%;
+
+}
+
+.edit_form .description {
+    padding: 10px;
+    width: 90%;
+
+
+
+}
+
+.edit_form .save_btn {
+    display: inline-block;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    font-size: 24px;
+    color: rgb(53, 255, 53);
+    text-decoration: none;
+    letter-spacing: 10px;
+    transition: 0.4s;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    margin-top: 20px;
+
+}
+
+.edit_form .save_btn:hover {
+
+    letter-spacing: 20px;
+}
+
+body {
+    background-color: black;
+    animation: fade 2s ease 1;
+    overflow-x: hidden;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.results {
+    margin: 0px auto;
+    width: 50%;
+    text-align: center;
+    color: white;
+    letter-spacing: 2px;
+    font-family: serif;
+
+}
+
+.results h1 {
+    color: rgb(73, 214, 73);
+    letter-spacing: 5px;
+    font-size: 40px;
+    margin: 30px 0px;
+}
+
+.option_line {
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: solid 1px green;
+
+}
+
+.option_line h2 {
+    width: 400px;
+
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+    z-index: -789;
+}
+
+@media only screen and (max-width: 600px) {
+    .edit_form {
+        width: 100%;
+
+
+    }
+
+    .edit_form input {
+        width: 40%;
+        padding: 5px;
+        font-size: 20px;
+        margin: 20px 12px;
+        letter-spacing: 3px;
+
+    }
+
+    .results {
+        width: 90%;
+    }
+
+    .results h1 {
+        font-size: 35px;
+        margin: 20px 0px;
+    }
+
+    .option_line {
+        justify-content: space-between;
+    }
+
+    .option_line h2 {
+        font-size: 20px;
+    }
+
+
+}
